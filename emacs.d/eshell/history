@@ -1,0 +1,4 @@
+grep whole *.el
+ls
+la
+ls -l
