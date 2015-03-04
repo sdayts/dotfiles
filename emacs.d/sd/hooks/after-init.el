@@ -55,13 +55,12 @@
 (define-key global-map (kbd "M-SPC") 'ace-jump-word-mode)
 (global-unset-key (kbd "C-M-r"))
 (define-key global-map (kbd "C-M-r") 'redraw-display) ; sometimes needed when doing ace jump
-(setq ace-jump-mode-scope 'visible)
 
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (setq-local ace-jump-search-filter
-                        (lambda ()
-                          (get-text-property (point) 'dired-filename)))))
+;; helm projectile
+;; TODO move to its own mode file
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
 
 ;;; Variable customizations
 

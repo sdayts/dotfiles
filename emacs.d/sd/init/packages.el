@@ -90,6 +90,10 @@
  ;; 'yaml-mode
  'ace-jump-mode
  'helm
+ 'helm-projectile
+ 'helm-swoop
+ 'paredit
+ 'projectile
  'whole-line-or-region
  'yasnippet
  'zoom-window
