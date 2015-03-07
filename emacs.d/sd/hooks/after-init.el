@@ -55,6 +55,11 @@
 (define-key global-map (kbd "M-SPC") 'ace-jump-word-mode)
 (global-unset-key (kbd "C-M-r"))
 (define-key global-map (kbd "C-M-r") 'redraw-display) ; sometimes needed when doing ace jump
+;(setq ace-jump-mode-scope 'window)       ; jump within one window only
+;(setq ace-jump-mode-gray-background nil) ; disable gray background
+(custom-set-faces
+ '(ace-jump-face-foreground
+   ((t (:inherit ace-jump-face-foreground :height 1.1 :foreground "yellow" :background "black" )))))
 
 ;; helm projectile
 ;; TODO move to its own mode file
