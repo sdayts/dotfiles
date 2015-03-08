@@ -16,13 +16,24 @@
 
 ;; Window movements
 (global-unset-key (kbd "M-l"))
+(global-unset-key (kbd "M-<right>"))
 (global-set-key (kbd "M-l") 'windmove-right)
+(global-set-key (kbd "M-<right>") 'windmove-right)
+
 (global-unset-key (kbd "M-h"))
+(global-unset-key (kbd "M-<left>"))
 (global-set-key (kbd "M-h") 'windmove-left)
+(global-set-key (kbd "M-<left>") 'windmove-left)
+
 (global-unset-key (kbd "M-k"))
+(global-unset-key (kbd "M-<up>"))
 (global-set-key (kbd "M-k") 'windmove-up)
+(global-set-key (kbd "M-<up>") 'windmove-up)
+
 (global-unset-key (kbd "M-j"))
+(global-unset-key (kbd "M-<down>"))
 (global-set-key (kbd "M-j") 'windmove-down)
+(global-set-key (kbd "M-<down>") 'windmove-down)
 
 ;; Zoom-in/Zoom-out
 (global-unset-key (kbd "C-M-z"))
@@ -36,6 +47,20 @@
 (global-unset-key (kbd "C-<end>"))
 (global-set-key (kbd "C-<end>") 'kill-this-buffer)
 
+;; Got to other window after split
+(global-unset-key (kbd "\C-x2"))
+(global-set-key "\C-x2"
+		(lambda ()
+		  (interactive)
+		  (split-window-vertically)
+		  (other-window 1)))
+
+(global-unset-key (kbd "\C-x3"))
+(global-set-key "\C-x3" (lambda ()
+			  (interactive)
+			  (split-window-horizontally)
+			  (other-window 1)))
+
 ;; Comment bindings
 (global-unset-key (kbd "C-c C-c"))
 (global-set-key (kbd "C-c C-c") 'comment-region)
@@ -48,7 +73,19 @@
 
 ;; Match parens
 (global-unset-key (kbd "C-]"))
-(global-set-key (kbd "C-]") 'goto-match-paren)
+(global-set-key (kbd "C-]") 'sd/forward-or-backward-sexp)
+
+;; Duplicate line
+(global-unset-key (kbd "C-c C-v"))
+(global-set-key (kbd "C-c C-v") 'sd/duplicate-line-or-region)
+
+;; Select vertical region
+(global-unset-key (kbd "C-M-<down>"))
+(global-set-key (kbd "C-M-<down>") 'rectangle-mark-mode)
+
+;; Map F6 to describe-key
+(global-unset-key (kbd "<f6>"))
+(global-set-key (kbd "<f6>") 'describe-key)
 
 ;; ace-jump-mode
 (global-unset-key (kbd "M-SPC"))
@@ -61,11 +98,18 @@
  '(ace-jump-face-foreground
    ((t (:inherit ace-jump-face-foreground :height 1.1 :foreground "yellow" :background "black" )))))
 
+;; Move mode line to top
+(setq-default header-line-format mode-line-format)
+(setq-default mode-line-format nil)
+
 ;; helm projectile
 ;; TODO move to its own mode file
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
+
+;; TODO move to its own hook
+(add-hook 'buffer-list-update-hook #'sd/update-header)
 
 ;;; Variable customizations
 
@@ -79,7 +123,7 @@
 (setq inhibit-startup-message t)
 ;; disable scrollbar, menu bar and tool bar
 (scroll-bar-mode -1)
-(menu-bar-mode 1)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 ;; turn off blinking cursor
 (blink-cursor-mode -1)
@@ -88,7 +132,9 @@
 ;; turn off line wrapping
 (set-default 'truncate-lines t)
 
-;;; Color customization
+;; Color customization
+;; Set cursor color to white
+(set-cursor-color "cyan")
 ;; set background colors
 (set-background-color "#2F4F4F")
 ;; color of border of buffer separator
@@ -101,8 +147,16 @@
 (set-face-foreground 'default "#FFF8DC")
 ;; color of srings
 (set-face-foreground 'font-lock-string-face "#00ECC8")
+;; selection/search background/foreground
+(set-face-attribute 'region nil :background "black" :foreground "yellow" )
+(set-face-attribute 'isearch nil :background "black" :foreground "yellow" )
+(set-face-attribute 'lazy-highlight nil :background "black" :foreground "cyan" )
+
+(set-face-attribute 'mode-line nil :background "black" :foreground "yellow" )
+(set-face-attribute 'mode-line-inactive nil :background "dimgray" :foreground "white" )
+;; (set-face-attribute 'header-line nil :background "black" :foreground "yellow" )
 
 ;; Kick off required modes
 (helm-mode 1)
-(desktop-change-dir "~/emacs")
+(desktop-change-dir "~/.emacs.d/temp")
 (desktop-save-mode 1)
