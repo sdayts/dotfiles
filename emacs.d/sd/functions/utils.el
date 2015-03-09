@@ -29,6 +29,20 @@ there's a region, all lines that region covers will be duplicated."
         (setq end (point)))
       (goto-char (+ origin (* (length region) arg) arg)))))
 
+(defvar sd/copy-word-under-cursor-regex "[^[:word:]_]"
+  "Regular expression to use when copying with `copy-word-under-cursor'.
+Can be customized for each major mode.")
+
+;;;###autoload
+(defun sd/copy-word-under-cursor ()
+  "Copy the word under the cursor to the kill ring."
+  (interactive)
+  (save-excursion
+    (save-excursion (re-search-backward sd/copy-word-under-cursor-regex))
+    (let ((beg (+ (match-beginning 0) 1))
+          (end (re-search-forward sd/copy-word-under-cursor-regex)))
+      (copy-region-as-kill beg (- end 1)))))
+
 
 ;;;###autoload
 (defun sd/update-header()

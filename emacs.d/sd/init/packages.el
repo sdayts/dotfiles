@@ -92,6 +92,7 @@
  'helm
  'helm-projectile
  'helm-swoop
+ 'move-text
  'paredit
  'projectile
  'whole-line-or-region

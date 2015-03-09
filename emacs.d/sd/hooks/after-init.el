@@ -6,6 +6,10 @@
 (global-unset-key (kbd "C-v"))
 (global-set-key (kbd "C-v") 'yank)
 
+;; Copy word under the cursor
+(global-unset-key (kbd "M-c"))
+(global-set-key (kbd "M-c") 'sd/copy-word-under-cursor)
+
 ;; Kill selection or line (in case nothing is selected)
 (global-unset-key (kbd "C-w"))
 (global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
@@ -67,6 +71,12 @@
 (global-unset-key (kbd "C-c C-u"))
 (global-set-key (kbd "C-c C-u") 'uncomment-region)
 
+;; Text movement
+(global-unset-key (kbd "C-S-<up>"))
+(global-set-key (kbd "C-S-<up>") 'move-text-up)
+(global-unset-key (kbd "C-S-<down>"))
+(global-set-key (kbd "C-S-<down>") 'move-text-down)
+
 ;; Run shell mode
 (global-unset-key (kbd "C-S-m"))
 (global-set-key (kbd "C-S-m") 'shell)
@@ -101,6 +111,10 @@
 ;; Move mode line to top
 (setq-default header-line-format mode-line-format)
 (setq-default mode-line-format nil)
+
+;; Display shell buffer in the current window
+(add-to-list 'display-buffer-alist
+      '("^\\*shell\\*$" . (display-buffer-same-window)))
 
 ;; helm projectile
 ;; TODO move to its own mode file
