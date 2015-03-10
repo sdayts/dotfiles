@@ -67,7 +67,6 @@
 ;; 'ag
 ;; 'coffee-mode
 ;; 'color-theme-sanityinc-tomorrow
-;; 'expand-region
 ;; 'dash
 ;; 'dart-mode
 ;;;; 'fill-column-indicator
@@ -93,6 +92,8 @@
  'helm
  'helm-projectile
  'helm-swoop
+ ;; 'highlight-symbol
+ 'hl-anything
  'move-text
  'paredit
  'projectile

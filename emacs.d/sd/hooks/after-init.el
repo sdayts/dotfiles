@@ -100,6 +100,10 @@
 (global-unset-key (kbd "<f6>"))
 (global-set-key (kbd "<f6>") 'describe-key)
 
+;; Map F2 to describe-key
+(global-unset-key (kbd "<f2>"))
+(global-set-key (kbd "<f2>") 'hl-highlight-thingatpt-local)
+
 ;; ace-jump-mode
 (global-unset-key (kbd "M-SPC"))
 (define-key global-map (kbd "M-SPC") 'ace-jump-word-mode)
@@ -180,3 +184,4 @@
 (helm-mode 1)
 (desktop-change-dir "~/.emacs.d/temp")
 (desktop-save-mode 1)
+(hl-highlight-mode)
