@@ -89,6 +89,7 @@
 ;; 'yagist
  ;; 'yaml-mode
  'ace-jump-mode
+ 'expand-region
  'helm
  'helm-projectile
  'helm-swoop

@@ -21,7 +21,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (move-text zoom-window yasnippet whole-line-or-region paredit helm-swoop helm-projectile ace-jump-mode))))
+    (expand-region zoom-window yasnippet whole-line-or-region paredit move-text helm-swoop helm-projectile ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

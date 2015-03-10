@@ -93,6 +93,9 @@
 (global-unset-key (kbd "C-M-<down>"))
 (global-set-key (kbd "C-M-<down>") 'rectangle-mark-mode)
 
+;; Enable deleting of selected text by subsequent input
+(delete-selection-mode 1)
+
 ;; Map F6 to describe-key
 (global-unset-key (kbd "<f6>"))
 (global-set-key (kbd "<f6>") 'describe-key)
@@ -115,6 +118,9 @@
 ;; Display shell buffer in the current window
 (add-to-list 'display-buffer-alist
       '("^\\*shell\\*$" . (display-buffer-same-window)))
+
+;; Expand region
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; helm projectile
 ;; TODO move to its own mode file
