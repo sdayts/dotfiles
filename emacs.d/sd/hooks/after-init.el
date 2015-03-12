@@ -67,9 +67,9 @@
 
 ;; Comment bindings
 (global-unset-key (kbd "C-c C-c"))
-(global-set-key (kbd "C-c C-c") 'comment-region)
+(global-set-key (kbd "C-c C-c") 'sd/comment-line-or-region)
 (global-unset-key (kbd "C-c C-u"))
-(global-set-key (kbd "C-c C-u") 'uncomment-region)
+(global-set-key (kbd "C-c C-u") 'sd/comment-line-or-region)
 
 ;; Text movement
 (global-unset-key (kbd "C-S-<up>"))
