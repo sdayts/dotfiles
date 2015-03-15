@@ -96,13 +96,17 @@
 ;; Enable deleting of selected text by subsequent input
 (delete-selection-mode 1)
 
-;; Map F6 to describe-key
-(global-unset-key (kbd "<f6>"))
-(global-set-key (kbd "<f6>") 'describe-key)
+;; Map F1 to helm-imenu
+(global-unset-key (kbd "<f1>"))
+(global-set-key (kbd "<f1>") 'helm-imenu)
 
 ;; Map F2 to describe-key
 (global-unset-key (kbd "<f2>"))
 (global-set-key (kbd "<f2>") 'hl-highlight-thingatpt-local)
+
+;; Map F6 to describe-key
+(global-unset-key (kbd "<f6>"))
+(global-set-key (kbd "<f6>") 'describe-key)
 
 ;; ace-jump-mode
 (global-unset-key (kbd "M-SPC"))
@@ -117,7 +121,6 @@
 
 ;; Move mode line to top
 (setq-default header-line-format mode-line-format)
-(setq-default mode-line-format nil)
 
 ;; Display shell buffer in the current window
 (add-to-list 'display-buffer-alist
@@ -133,6 +136,14 @@
 		(lambda ()
 		  (interactive)
 		  (dired ".") ))
+
+;; Helm swoop
+(global-unset-key (kbd "M-i"))
+(global-set-key (kbd "M-i") 'helm-swoop)
+
+;; toggle h-cpp
+(global-unset-key (kbd "C-<return>"))
+(global-set-key (kbd "C-<return>") 'ff-find-other-file)
 
 ;; Backup file configuration
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
@@ -177,6 +188,8 @@
 (setq visible-bell nil)
 ;; turn off line wrapping
 (set-default 'truncate-lines t)
+;; turn on line numbers globaly
+(global-linum-mode t)
 
 ;; Color customization
 ;; Set cursor color to white
@@ -204,10 +217,12 @@
 
 ;; hilight current line
 (global-hl-line-mode +1)
-(set-face-background hl-line-face "#005A64")
+;; (set-face-background hl-line-face "#005A64")
+(set-face-background hl-line-face "#345858")
 
 ;; Kick off required modes
 (helm-mode 1)
 (desktop-change-dir "~/.emacs.d/temp")
 (desktop-save-mode 1)
-(hl-highlight-mode)
+;; commented out causes performace issues when switching buffers
+;;(hl-highlight-mode)

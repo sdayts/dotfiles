@@ -92,11 +92,11 @@
  'helm
  'helm-projectile
  'helm-swoop
- ;; 'highlight-symbol
  'hl-anything
  'move-text
  'paredit
  'projectile
+ 'rtags
  'whole-line-or-region
  'yasnippet
  'zoom-window
