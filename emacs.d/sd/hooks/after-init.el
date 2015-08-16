@@ -139,7 +139,7 @@
 
 ;; Helm swoop
 (global-unset-key (kbd "M-i"))
-(global-set-key (kbd "M-i") 'helm-swoop)
+(global-set-key (kbd "M-i") 'helm-occur)
 
 ;; toggle h-cpp
 (global-unset-key (kbd "C-<return>"))

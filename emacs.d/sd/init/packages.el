@@ -88,7 +88,9 @@
 ;; 'yagist
  ;; 'yaml-mode
  'ace-jump-mode
+ 'auto-complete-c-headers
  'expand-region
+ 'ensime
  'helm
  'helm-projectile
  'helm-swoop
@@ -97,6 +99,7 @@
  'paredit
  'projectile
  'rtags
+ 'rtags-ac
  'whole-line-or-region
  'yasnippet
  'zoom-window
