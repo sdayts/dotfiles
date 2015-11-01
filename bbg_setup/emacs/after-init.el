@@ -1,6 +1,17 @@
 (load "~/.emacs.d/sd_funcs.el")
 
+(add-hook 'ido-setup-hook 'sd/ido-define-keys)
 
+;; toggle h-cpp
+(global-unset-key (kbd "C-<return>"))
+(global-set-key (kbd "C-<return>") 'ff-find-other-file)
+
+;; Kick off dired with Ctrl-l
+(global-unset-key (kbd "C-l"))
+(global-set-key (kbd "C-l")
+		(lambda ()
+		  (interactive)
+		  (dired ".") ))
 
 ;; avy-mode
 (global-unset-key (kbd "M-SPC"))
