@@ -13,7 +13,16 @@
       helm-mode-reverse-history           nil ; place helm command history on top
       )
 
+;; ido
 (add-hook 'ido-setup-hook 'sd/ido-define-keys)
+
+;; stop emacs from opening in "other" window
+(setq same-window-regexps nil);;'(("^*")))
+(add-to-list 'same-window-buffer-names "*Help*")
+(add-to-list 'same-window-buffer-names "*shell*")
+(add-to-list 'same-window-buffer-names "*Apropos*")
+(add-to-list 'same-window-buffer-names "*Summary*")
+(add-to-list 'same-window-buffer-names "*grep*")
 
 ;; toggle h-cpp
 (global-unset-key (kbd "C-<return>"))
