@@ -1,4 +1,9 @@
 (load "~/.emacs.d/sd_funcs.el")
+
+;; Move mode line to top
+(setq-default header-line-format mode-line-format)
+(setq-default mode-line-format nil)
+
 ;; helm options
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
@@ -138,6 +143,10 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+
+;; Helm swoop
+(global-unset-key (kbd "M-i"))
+(global-set-key (kbd "M-i") 'helm-occur)
 
 ;; Color customization
 ;; selection/search background/foreground
