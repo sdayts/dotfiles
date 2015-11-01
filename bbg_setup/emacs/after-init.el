@@ -140,7 +140,6 @@
 ;; Kick off required modes
 (helm-mode 1)
 (ido-vertical-mode 1)
-(ivy-mode 1)
 ;; (desktop-save-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
