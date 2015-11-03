@@ -177,6 +177,12 @@
 (set-face-attribute 'mode-line nil :background "black" :foreground "yellow" )
 (set-face-attribute 'mode-line-inactive nil :background "dimgray" :foreground "white" )
 
+
+;; hilight current line
+(global-hl-line-mode +1)
+;; (set-face-background hl-line-face "#005A64")
+(set-face-background hl-line-face "#345858")
+
 ;; Kick off required modes
 (helm-mode 1)
 (ido-vertical-mode 1)
