@@ -155,10 +155,27 @@
 (global-set-key (kbd "M-i") 'helm-occur)
 
 ;; Color customization
+;; Set cursor color to white
+(set-cursor-color "cyan")
+;; set background colors
+(set-background-color "#2F4F4F")
+;; color of border of buffer separator
+(set-face-background 'fringe "#2F4F4F")
+;; color of comments
+(set-face-foreground 'font-lock-comment-face "#FA8278")
+;; color of keyword
+(set-face-foreground 'font-lock-keyword-face "#FF9664")
+;; color of background
+(set-face-foreground 'default "#FFF8DC")
+;; color of srings
+(set-face-foreground 'font-lock-string-face "#00ECC8")
 ;; selection/search background/foreground
 (set-face-attribute 'region nil :background "black" :foreground "yellow" )
 (set-face-attribute 'isearch nil :background "yellow" :foreground "black" )
 (set-face-attribute 'lazy-highlight nil :background "black" :foreground "cyan" )
+;; mode line colors
+(set-face-attribute 'mode-line nil :background "black" :foreground "yellow" )
+(set-face-attribute 'mode-line-inactive nil :background "dimgray" :foreground "white" )
 
 ;; Kick off required modes
 (helm-mode 1)
