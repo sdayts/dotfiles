@@ -157,7 +157,7 @@
 ;; Color customization
 ;; selection/search background/foreground
 (set-face-attribute 'region nil :background "black" :foreground "yellow" )
-(set-face-attribute 'isearch nil :background "black" :foreground "yellow" )
+(set-face-attribute 'isearch nil :background "yellow" :foreground "black" )
 (set-face-attribute 'lazy-highlight nil :background "black" :foreground "cyan" )
 
 ;; Kick off required modes
