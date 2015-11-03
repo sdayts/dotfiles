@@ -186,7 +186,7 @@
 ;; Kick off required modes
 (helm-mode 1)
 (ido-vertical-mode 1)
-;; (desktop-save-mode 1)
+(desktop-save-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
