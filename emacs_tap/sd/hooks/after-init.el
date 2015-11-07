@@ -32,9 +32,13 @@
 		  (interactive)
 		  (dired ".") ))
 
-;; avy-mode
+;; avy customizations. weirdly looks like avy does not have standard hooks
+(require 'avy)
 (global-unset-key (kbd "M-SPC"))
-(define-key global-map (kbd "M-SPC") 'avy-goto-char-2)
+(define-key global-map (kbd "M-SPC") 'avy-goto-word-1)
+(setq avy-background t)
+(set-face-attribute 'avy-lead-face nil :background "black" :foreground "yellow")
+(set-face-attribute 'avy-lead-face-0 nil :background "black" :foreground "yellow")
 
 ;; Run shell mode
 (global-unset-key (kbd "C-S-m"))
@@ -82,6 +86,14 @@
 ;; List Buffers
 (global-unset-key (kbd "C-S-b"))
 (global-set-key (kbd "C-S-b") 'helm-buffers-list)
+
+;; Map F1 to helm-imenu
+(global-unset-key (kbd "<f1>"))
+(global-set-key (kbd "<f1>") 'helm-imenu)
+
+;; Map C-x C-r to helm-recentf
+(global-unset-key (kbd "C-x C-r"))
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
 
 ;; Window movements
 (global-unset-key (kbd "M-l"))
@@ -137,10 +149,6 @@
 ;; Enable deleting of selected text by subsequent input
 (delete-selection-mode 1)
 
-;; Map F1 to helm-imenu
-(global-unset-key (kbd "<f1>"))
-(global-set-key (kbd "<f1>") 'helm-imenu)
-
 ;; Map F6 to describe-key
 (global-unset-key (kbd "<f6>"))
 (global-set-key (kbd "<f6>") 'describe-key)
@@ -159,6 +167,19 @@
 (set-face-attribute 'region nil :background "black" :foreground "yellow" )
 (set-face-attribute 'isearch nil :background "black" :foreground "yellow" )
 (set-face-attribute 'lazy-highlight nil :background "black" :foreground "cyan" )
+
+;; set all bold faces to normal
+(mapc
+ (lambda (face)
+   (when (eq (face-attribute face :weight) 'bold)
+     (set-face-attribute face nil :weight 'normal)))
+ (face-list))
+
+;; TODO
+;; if using theme misterioso:
+;; 1. change the current line background
+;; 2. disable bold weight
+
 
 ;; Kick off required modes
 (helm-mode 1)
