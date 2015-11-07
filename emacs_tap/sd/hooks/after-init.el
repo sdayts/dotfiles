@@ -163,10 +163,33 @@
 (global-set-key (kbd "M-i") 'helm-occur)
 
 ;; Color customization
+;; Set cursor color to white
+(set-cursor-color "cyan")
+;; set background colors
+(set-background-color "#2F4F4F")
+;; color of border of buffer separator
+(set-face-background 'fringe "#2F4F4F")
+;; color of comments
+(set-face-foreground 'font-lock-comment-face "#FA8278")
+;; color of keyword
+(set-face-foreground 'font-lock-keyword-face "#FF9664")
+;; color of background
+(set-face-foreground 'default "#FFF8DC")
+;; color of srings
+(set-face-foreground 'font-lock-string-face "#00ECC8")
 ;; selection/search background/foreground
 (set-face-attribute 'region nil :background "black" :foreground "yellow" )
-(set-face-attribute 'isearch nil :background "black" :foreground "yellow" )
+(set-face-attribute 'isearch nil :background "yellow" :foreground "black" )
 (set-face-attribute 'lazy-highlight nil :background "black" :foreground "cyan" )
+;; mode line colors
+(set-face-attribute 'mode-line nil :background "black" :foreground "yellow" )
+(set-face-attribute 'mode-line-inactive nil :background "dimgray" :foreground "white" )
+
+
+;; hilight current line
+(global-hl-line-mode +1)
+;; (set-face-background hl-line-face "#005A64")
+(set-face-background hl-line-face "#345858")
 
 ;; set all bold faces to normal
 (mapc
@@ -184,7 +207,7 @@
 ;; Kick off required modes
 (helm-mode 1)
 (ido-vertical-mode 1)
-;; (desktop-save-mode 1)
+(desktop-save-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
