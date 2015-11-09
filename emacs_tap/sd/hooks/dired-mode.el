@@ -7,3 +7,5 @@
 ;; ignore files with certain extensions
 (add-to-list 'dired-omit-extensions ".tsk")
 (setq-default dired-omit-mode t)
+;; custom key binding
+(define-key dired-mode-map (kbd "<end>") 'dired-up-directory)

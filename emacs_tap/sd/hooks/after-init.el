@@ -202,6 +202,7 @@
 ;; if using theme misterioso:
 ;; 1. change the current line background
 ;; 2. disable bold weight
+;; 3. install & configure dired-single
 
 ;; Kick off required modes
 (helm-mode 1)
