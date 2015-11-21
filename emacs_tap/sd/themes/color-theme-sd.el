@@ -596,7 +596,7 @@ names to which it refers are bound."
 
      ;; show-paren
      (show-paren-mismatch ((t (:foreground ,sd-red+1 :background ,sd-bg+3 :weight bold))))
-     (show-paren-match ((t (:background ,sd-bg+3 :weight bold))))
+     (show-paren-match ((t (:background ,sd-black :foreground ,sd-yellow :weight bold))))
 
      ;; smartparens
      (sp-show-pair-mismatch-face ((t (:foreground ,sd-red+1 :background ,sd-bg+3 :weight bold))))
