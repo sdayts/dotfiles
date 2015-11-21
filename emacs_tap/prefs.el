@@ -1,3 +1,4 @@
 ;; Sergey's preferences
-;; (switch-theme 'zenburn)
+(message "Loading Sergey's prefs.el file.")
+
 (setq exordium-theme 'sd)

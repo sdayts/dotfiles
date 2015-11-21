@@ -92,9 +92,9 @@
 (global-set-key (kbd "<f1>") 'helm-imenu)
 
 ;; Map F2 to highlight-symbol
-(require 'highlight-symbol)
+(hl-highlight-mode t)
 (global-unset-key [f2])
-(global-set-key [f2] 'highlight-symbol)
+(global-set-key [f2] 'hl-highlight-thingatpt-local)
 
 ;; Map C-x C-r to helm-recentf
 (global-unset-key (kbd "C-x C-r"))
