@@ -91,6 +91,11 @@
 (global-unset-key (kbd "<f1>"))
 (global-set-key (kbd "<f1>") 'helm-imenu)
 
+;; Map F2 to highlight-symbol
+(require 'highlight-symbol)
+(global-unset-key [f2])
+(global-set-key [f2] 'highlight-symbol)
+
 ;; Map C-x C-r to helm-recentf
 (global-unset-key (kbd "C-x C-r"))
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
@@ -162,34 +167,8 @@
 (global-unset-key (kbd "M-i"))
 (global-set-key (kbd "M-i") 'helm-occur)
 
-;; ;; Color customization
-;; ;; Set cursor color to white
-;; (set-cursor-color "cyan")
-;; ;; set background colors
-;; (set-background-color "#2F4F4F")
-;; ;; color of border of buffer separator
-;; (set-face-background 'fringe "#2F4F4F")
-;; ;; color of comments
-;; (set-face-foreground 'font-lock-comment-face "#FA8278")
-;; ;; color of keyword
-;; (set-face-foreground 'font-lock-keyword-face "#FF9664")
-;; ;; color of background
-;; (set-face-foreground 'default "#FFF8DC")
-;; ;; color of srings
-;; (set-face-foreground 'font-lock-string-face "#00ECC8")
-;; ;; selection/search background/foreground
-;; (set-face-attribute 'region nil :background "black" :foreground "yellow" )
-;; (set-face-attribute 'isearch nil :background "yellow" :foreground "black" )
-;; (set-face-attribute 'lazy-highlight nil :background "black" :foreground "cyan" )
-;; ;; mode line colors
-;; (set-face-attribute 'mode-line nil :background "black" :foreground "yellow" )
-;; (set-face-attribute 'mode-line-inactive nil :background "dimgray" :foreground "white" )
-
-
 ;; hilight current line
 (global-hl-line-mode +1)
-;; (set-face-background hl-line-face "#005A64")
-(set-face-background hl-line-face "#345858")
 
 ;; set all bold faces to normal
 (mapc

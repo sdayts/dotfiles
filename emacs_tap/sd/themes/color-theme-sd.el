@@ -55,29 +55,16 @@
     (sd-peach    . "FF9664")
     (sd-black    . "black")
     (sd-aqua     . "#00ECC8")
-    (sd-bright-red . "#ED0909")))
+    (sd-bright-red  . "#ED0909")
+    (sd-light-cyan  . "#00FFFF")
+    (sd-pale-bg     . "#345858")
+    (sd-light-brown . "#FF9664")
+    (sd-pale-brown  . "#FF9600")
+    ))
 
 
 ;; ;; mode line colors
 ;; (set-face-attribute 'mode-line nil :background "black" :foreground "yellow" )
-
-;; ;; Set cursor color
-;; (set-cursor-color "cyan")
-;; ;; set background colors
-;; (set-background-color "#2F4F4F")
-;; ;; color of comments
-;; (set-face-foreground 'font-lock-comment-face "#FA8278")
-;; ;; color of keyword
-;; (set-face-foreground 'font-lock-keyword-face "#FF9664")
-;; ;; color of background
-;; (set-face-foreground 'default "#FFF8DC")
-;; ;; color of srings
-;; (set-face-foreground 'font-lock-string-face "#00ECC8")
-;; ;; selection/search background/foreground
-;; (set-face-attribute 'region nil :background "black" :foreground "yellow" )
-;; (set-face-attribute 'isearch nil :background "yellow" :foreground "black" )
-;; (set-face-attribute 'lazy-highlight nil :background "black" :foreground "cyan" )
-
 
 ;;; Theme definition
 
@@ -167,17 +154,17 @@ names to which it refers are bound."
      (font-lock-builtin-face ((t (:foreground ,sd-fg :weight bold))))
      (font-lock-comment-face ((t (:foreground ,sd-dark-red :italic nil))))
      (font-lock-comment-delimiter-face ((t (:foreground ,sd-green-1))))
-     (font-lock-constant-face ((t (:foreground ,sd-green+4))))
+     (font-lock-constant-face ((t (:foreground ,sd-light-cyan))))
      (font-lock-doc-face ((t (:foreground ,sd-green+2))))
-     (font-lock-function-name-face ((t (:foreground ,sd-cyan))))
-     (font-lock-keyword-face ((t (:foreground ,sd-peach :weight normal))))
+     (font-lock-function-name-face ((t (:foreground ,sd-light-cyan))))
+     (font-lock-keyword-face ((t (:foreground ,sd-light-brown :weight normal))))
      (font-lock-negation-char-face ((t (:foreground ,sd-yellow :weight bold))))
-     (font-lock-preprocessor-face ((t (:foreground ,sd-blue+1))))
+     (font-lock-preprocessor-face ((t (:foreground ,sd-pale-brown))))
      (font-lock-regexp-grouping-construct ((t (:foreground ,sd-yellow :weight bold))))
      (font-lock-regexp-grouping-backslash ((t (:foreground ,sd-green :weight bold))))
      (font-lock-string-face ((t (:foreground ,sd-aqua))))
-     (font-lock-type-face ((t (:foreground ,sd-blue-1))))
-     (font-lock-variable-name-face ((t (:foreground ,sd-orange))))
+     (font-lock-type-face ((t (:foreground ,sd-light-cyan))))
+     (font-lock-variable-name-face ((t (:foreground ,sd-fg))))
      (font-lock-warning-face ((t (:foreground ,sd-yellow-2 :weight bold))))
 
      (c-annotation-face ((t (:inherit font-lock-constant-face))))
@@ -376,7 +363,7 @@ names to which it refers are bound."
       ((t (:foreground ,sd-yellow :background ,sd-bg-1
                 :underline nil :weight bold
                 :box (:line-width -1 :style released-button)))))
-     (helm-selection ((t (:background ,sd-bg+1 :underline nil))))
+     (helm-selection ((t (:background ,sd-bg-1 :underline nil :foreground ,sd-yellow))))
      (helm-selection-line ((t (:background ,sd-bg+1))))
      (helm-visible-mark ((t (:foreground ,sd-bg :background ,sd-yellow-2))))
      (helm-candidate-number ((t (:foreground ,sd-green+4 :background ,sd-bg-1))))
@@ -415,9 +402,9 @@ names to which it refers are bound."
      (helm-swoop-target-word-face ((t (:foreground ,sd-yellow :background ,sd-bg+2 :weight bold))))
 
      ;; hl-line-mode
-     (hl-line-face ((,class (:background ,sd-bg-05))
+     (hl-line-face ((,class (:background ,sd-pale-bg))
                     (t :weight bold)))
-     (hl-line ((,class (:background ,sd-bg-05)) ; old emacsen
+     (hl-line ((,class (:background ,sd-pale-bg)) ; old emacsen
                (t :weight bold)))
 
      ;; hl-sexp
