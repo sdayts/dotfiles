@@ -121,6 +121,8 @@
 
 ;; Move mode line to top
 (setq-default header-line-format mode-line-format)
+;; Hide the bottom mode line
+(setq-default mode-line-format nil)
 
 ;; Display shell buffer in the current window
 (add-to-list 'display-buffer-alist
@@ -144,6 +146,10 @@
 ;; toggle h-cpp
 (global-unset-key (kbd "C-<return>"))
 (global-set-key (kbd "C-<return>") 'ff-find-other-file)
+
+;; display full screen
+(global-unset-key (kbd "C-M-+"))
+(global-set-key (kbd "C-M-+") 'toggle-frame-maximized)
 
 ;; Backup file configuration
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))

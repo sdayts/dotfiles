@@ -95,9 +95,9 @@
  'projectile
  'rtags
  'rtags-ac
- 'whole-line-or-region
  'yasnippet
  'zoom-window
+ 'whole-line-or-region
  )
 
 ;; vendored packages
