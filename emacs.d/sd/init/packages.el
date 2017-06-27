@@ -2,12 +2,7 @@
 ;; http://blog.zenspider.com/blog/2013/06/my-emacs-setup-packages.html
 
 (require 'package)
-
-(dolist (repo '(
-;;	("elpa"      . "http://tromey.com/elpa/")
-;;      ("marmalade" . "http://marmalade-repo.org/packages/")
-        ("melpa"     . "http://melpa.milkbox.net/packages/")))
-  (add-to-list 'package-archives repo))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 (defun sd/package-refresh-and-install (name)
   "Ensure we have a fresh package list, then install."

@@ -220,6 +220,10 @@
 ;; (set-face-background hl-line-face "#005A64")
 (set-face-background hl-line-face "#345858")
 
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-command-modifier 'meta)
+  )
+
 ;; Kick off required modes
 (helm-mode 1)
 (desktop-change-dir "~/.emacs.d/temp")
