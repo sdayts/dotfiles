@@ -96,11 +96,15 @@
 ;; Enable deleting of selected text by subsequent input
 (delete-selection-mode 1)
 
+;; meta-X is handled by Helm
+(global-unset-key (kbd "M-x"))
+(global-set-key (kbd "M-x") 'helm-M-x)
+
 ;; Map F1 to helm-imenu
 (global-unset-key (kbd "<f1>"))
 (global-set-key (kbd "<f1>") 'helm-imenu)
 
-;; Map F2 to describe-key
+;; Map F2 to hilight current symbol
 (global-unset-key (kbd "<f2>"))
 (global-set-key (kbd "<f2>") 'hl-highlight-thingatpt-local)
 
